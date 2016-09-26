@@ -68,7 +68,7 @@
 > 'line break'의 약자로 줄을 바꿀 때 사용한다.
 >
 > ### 1.7.3. 헤드라인 
-> `Headline`의 약자로 h1부터 h6까지 있다. 숫자가 커질수록 작아진다. 이들은 단순히 크기의 문제가 아니며 검색엔진 등이 페이지의 내용을 검색할 때 포함된 내용들의 중요도를 평가하는 기준이 된다.
+> 'Headline'의 약자로 h1부터 h6까지 있다. 숫자가 커질수록 작아진다. 이들은 단순히 크기의 문제가 아니며 검색엔진 등이 페이지의 내용을 검색할 때 포함된 내용들의 중요도를 평가하는 기준이 된다.
 > ex) `<h1> 낢이 사는 이야기~! </h1>`
 >
 > ### 1.7.4. 링크
@@ -151,17 +151,19 @@ ex)
 </body>
 </html>
 ```
+
 > ### 2.3.3. *external*
 > 이 방법은 `head` 태그 안에 `link` 태그를 넣어서, **외부 다른 페이지를 참조해서 스타일을 적용한다.**
-> ex)
+
 ```html
-<html lang="en">  
-<head>  
-  <link rel="stylesheet" href=“style.css"> <!-- 중요!! -->  
-</head>  
-<body>  
-...
+<html lang="en">
+<head> 
+  <link rel="stylesheet" href=“style.css>
+</head> 
+<body> 
+
 ```
+
 > ## 2.4. CSS 선택자
 > ### 2.4.1 전체 선택자(universal selector)
 > `*`로 표현한다. 모든 태그를 나타낸다.
@@ -293,5 +295,5 @@ p::first-letter{font-size:100px;}
 > `letter-spacing`이라는 속성을 통해 글자간 간격을 조정할 수 있다.
 
 > ## 2.16. 단어 간격
-> `letter-spacing`을 통해 글자가 아닌, 단어의 간격을 조정할 수 있다.
+> `word-spacing`을 통해 글자가 아닌, 단어의 간격을 조정할 수 있다.
 
