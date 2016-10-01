@@ -45,8 +45,14 @@
 <br>
 > :books: **Curriculum**
 > * Basic Python
+>   - [PythonBasic_Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day1.md)
+>   - [PythonBasic_Day2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day2.md)
 
 > * Basic HTML, CSS
+>   - [HTML_CSS Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day1.md)
+>   - [HTML_CSS Day2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day2.md)
+>   - [HTML_CSS Day3](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day3.md)
+>   - [HTML_CSS Day4](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day4.md)
 
 > * Django and back-end
 
@@ -59,11 +65,11 @@
 <br><br>
 
 ### :white_check_mark: Contents of this repository
-> #### :open_file_folder: [FC_Friends' code](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Friends'%20code)
-> In Eastern world, human being has been called a `micro universe`. There are so many kinds of people with different thoughts and thinking. Even if we learn same things in WPS school, some outliers come up with a very breathtaking, marvelous idea that we should share with. In this folder, I will put some my friends' outstanding codes, compare to mine and leave some comments on them. I hope this repository would be creative and innovative.
+> #### :open_file_folder: [FC_Sample](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Sample)
+> I will summarize and abridge everyday's stuff I will have learned in this folder. And if possible stuff there will be linked from README.md, this page, at the Curriculum section.
 
 > #### :open_file_folder: [FC_Homework](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Homework)
 > There will be lots of homework for almost 3 months from now on. This folder is an uploading place for my homework and teachers and assistants will check it.
 
-> #### :open_file_folder: [FC_Sample](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Sample)
-> I will summarize and abridge everyday's stuff I will have learned in this folder. And if possible stuff there will be linked from README.md, this page, at the Curriculum section.
+> #### :open_file_folder: [FC_Friends' code](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Friends'%20code)
+> In Eastern world, human being has been called a `micro universe`. There are so many kinds of people with different thoughts and thinking. Even if we learn same things in WPS school, some outliers come up with a very breathtaking, marvelous idea that we should share with. In this folder, I will put some my friends' outstanding codes, compare to mine and leave some comments on them. I hope this repository would be creative and innovative.
