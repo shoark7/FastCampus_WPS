@@ -1,0 +1,76 @@
+body
+  padding: 0
+  margin: 0
+
+#nav-board
+  border-bottom: 1px groove #fff
+  overflow: hidden
+  position: fixed
+  top: 0
+  left: 0
+  padding-right: 5%
+  padding-left: 5%
+  height: 100px
+  background-color: white
+  width: 100%
+  box-sizing: border-box
+  z-index: 999
+  height: 100px
+  #nav-menu
+    list-style-type: none
+    float: right
+    margin: 0
+    li
+      float: left
+      padding: 0 10px
+      height: 100%
+      line-height: 100px
+    a
+      color: #444
+      &:link
+        text-decoration: none
+      &:hover
+        text-decoration: underline
+
+.main-part
+  overflow: auto
+  padding:
+    right: 5%
+    left: 5%
+  margin-top: 130px
+
+  img
+    display: block
+    width: 100%
+
+.course
+  box-sizing: border-box
+  // padding:
+  //   right: 3%
+  //   left: 3%
+  height: 150px
+  margin-top: 30px
+  div
+    height: 20%
+    width: 18%
+    padding: 20px
+    float: left
+    margin-right: 2%
+    text-align: center
+    background-color: white
+    color: black
+    border: 2px solid black
+
+  a
+    &:nth-child(2)
+      background-color: #444
+      color: white
+    &:first-child
+      background-color: #444
+      color: white
+    &:hover
+      div
+        background-color: #222
+        color: white
+
+.starthr
