@@ -92,6 +92,7 @@ body {
 .start-hr {
   position: relative;
   overflow: auto;
+  margin-bottom: 50px;
 }
 
 .start-hr span {
@@ -99,7 +100,27 @@ body {
   display: inline-block;
   position: absolute;
   top: 10px;
-  min-width: 100%;
+  min-width: 80%;
+  box-sizing: border-box;
+}
+
+.course-intro {
+  width: 100%;
+  height: 100px;
+}
+
+.course-intro .course-btn {
+  border: 1px groove #fff;
+  width: 20%;
+  height: 290px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 50px;
+  float: left;
+}
+
+.course-intro .course-btn img {
+  transform: scaleY(1.02);
 }
 
 /*# sourceMappingURL=index.css.map */
