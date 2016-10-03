@@ -89,4 +89,17 @@ body {
   color: white;
 }
 
+.start-hr {
+  position: relative;
+  overflow: auto;
+}
+
+.start-hr span {
+  border: 1px groove black;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  min-width: 100%;
+}
+
 /*# sourceMappingURL=index.css.map */
