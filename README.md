@@ -47,6 +47,7 @@
 > * Basic Python
 >   - [PythonBasic_Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day1.md)
 >   - [PythonBasic_Day2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day2.md)
+>   - [PythonBasic_Day3](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day3.md)
 
 > * Basic HTML, CSS
 >   - [HTML_CSS Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day1.md)
