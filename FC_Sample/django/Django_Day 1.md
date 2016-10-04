@@ -1,4 +1,4 @@
-# 파이썬 튜토리얼 정리
+# Django Day 1.
 <p style='text-align:right'>2016 / 10 / 04 박성환</p>
 
 
