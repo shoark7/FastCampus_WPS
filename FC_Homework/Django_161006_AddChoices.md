@@ -54,3 +54,10 @@ request의 키:값 중 값이 비어 있어도 오류가 나지 않는다는 가
 
 ~~왠지 뿌듯하다..~~
 ![image of success](../images/숙제1.png)
+처음 구현이 된 상황이다.<br>
+
+![image of success](../images/숙제2.png)
+빈 값에 대처하지 못해 공허한 구멍만이 숭숭 뚫린 모습이다.<br>
+
+![image of success](../images/숙제3.png)
+대처하는 코드를 만들었고 빈 값 입력시 위에 에러메시지가 나오게 된 상홍이다.
