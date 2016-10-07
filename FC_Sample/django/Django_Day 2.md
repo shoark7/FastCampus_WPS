@@ -1,6 +1,6 @@
 # ◈ Django Day 2.
 # 장고 Tutorial 3-4 
-<p style='text-align:center'>2016/10/06<br>박성환</p>
+<p style='text-align:right'>2016/10/06<br>박성환</p>
 ## [Tutorial 3: view, errors, templates](https://docs.djangoproject.com/en/1.10/intro/tutorial03/)
 **view(이하 뷰)란 일반적으로 특별한 기능과 특별한 템플릿을 갖는 장고 어플리케이션의 웹페이지의 한 종류이다.**
 
