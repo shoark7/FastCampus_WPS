@@ -3,13 +3,14 @@
 #### <p style='text-align:right;'>2016/10/08 </p>
 #### <p style='text-align:right;'>박성환		 </p>
 
-&nbsp;&nbsp;&nbsp;앞으로 우리는 수많은 프로젝트에 직면할 것이다. 그리고 프로젝트마다 서로 다른 환경, 버젼을 요구할 것이고, 따라서 기본이 되는 환경설정은 매우 중요하다.<br>
+&nbsp;&nbsp;&nbsp;앞으로 우리는 수많은 프로젝트에 직면할 것이다. 그리고 프로젝트마다 서로 다른 환경, 버젼을 요구할 것이고,
+따라서 기본이 되는 환경설정은 매우 중요하다.<br>
 &nbsp;&nbsp;&nbsp;그래서 주말 동안 한영샘이 내주신 과제는 장고, 파이썬 프로젝트의 pyenv, virtualenv 설정, 장고 설치, 파이참에 인터프리터 세팅까지 프로젝트의 '기본' 세팅을 처음부터 다시 해보는 것이다.<br>
 진행할 과정은 다음과 같다.
 
 > 1. pyenv 전체삭제
 > 2. pyenv 재설치
-> 3. pyenv 에 파이썬 3.4.3설치
+> 3. pyenv에 파이썬 3.4.3 설치
 > 4. 가상환경 생성
 > 5. pip로 장고 설치
 > 6. 장고 프로젝트 생성
@@ -39,7 +40,7 @@ cd: 그런 파일이나 디렉터리가 없습니다: /home/sunghwanpark/.pyenv
 <br><br><br>
 
 ## 2. pyenv 재설치
-먼저 pyenv의 [github][pyenv]에 들어간다. 그러나 이 repository에는 README.md에는 pyenv의 동작원리 등을 길게 설명하고 있고 설치에 대한 이야기는 없다.
+먼저 pyenv의 [github][pyenv]에 들어간다. 그러나 이 repository의 README.md에는 pyenv의 동작원리 등을 길게 설명하고 있고 설치에 대한 이야기는 없다.
 <br> 대신 중반 이후에 설치를 위해서는 [pyenv-installer][pyenv-installer]라는 다른 repository를 방문하라고 안내하고 있다.<br><br>
 
 pyenv-installer repoitory에는 바로 운영체제별 설치에 대한 안내를 하고 있다.
@@ -64,8 +65,8 @@ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
 ```
 <br>
-수찬 샘이 모든 프로그램, 환경설정 설치 과정은 이렇게 1. 깃허브 등에서 소스 찾아서 설치하고, 
-2. 안 되면 dependency 찾아보고 의 연속이라고 하셨는데 그런 면에서 한 번 더 해보는 것이 의미가 있는 것 같다.<br><br>
+수찬 샘이 모든 프로그램, 환경설정 설치 과정은 이렇게 _1. 깃허브 등에서 소스 찾아서 설치하고, 
+2. 안 되면 dependency 찾아보고 의 연속_이라고 하셨는데 그런 면에서 한 번 더 해보는 것이 의미가 있는 것 같다.<br><br>
 
 'pyenv'라고 터미널에 입력했을 때 다음과 같이 나오면 정상이다.
 ```
@@ -99,12 +100,12 @@ For full documentation, see: https://github.com/yyuu/pyenv#readme
 이제 pyenv에 다양한 파이썬 버전을 설치하자. <br>
 'pyenv install _버전명_'을 통해 원하는 버전을 설치할 수 있다. 난 일단 3.5.2 버전을 설치한다.
 
-`pyenv install 3.4.3`
+`pyenv install 3.5.2`
 시간이 조금 걸리면 설치가 완료된다. `pyenv versions`를 다시 입력해보면 원하는 버전이 설치되었음을 알 수 있다.
 <br><br><br>
 
 ## 4. 가상환경 생성
-pyenv를 통해 버젼의 구속에서 벗어날 수 있었다. 그러나 여기서 끝나지 않는다.<br>
+pyenv를 통해 파이썬 버전의 구속에서 벗어날 수 있었다. 그러나 여기서 끝나지 않는다.<br>
 장고 프로젝트를 여럿 하는데 프로젝트마다 **사용하는 장고의 버전이 다를 수도 있을 것이다.** 즉 프로젝트마다 라이브러리의 구속도 해결해야 한다.<br>
 가상환경은 'virtualenv'라는 이름으로 만들 수 있는데<br>
 **pyenv가 파이썬의 버젼을 자유롭게 해준다면, virtualenv는 프로젝트별 라이브러리의 버전을 자유롭게 해준다.**<br><br>
@@ -121,12 +122,12 @@ pyenv를 통해 버젼의 구속에서 벗어날 수 있었다. 그러나 여기
   django-project
 ```
 그리고 <br>
-`pyenv activate django-project` 라고 입력해 해당 가상환경에서 작업할 수 있다.
+`pyenv activate django-project` 라고 입력해 해당 가상환경에서 작업할 수 있다.<br>
 `pyenv deactivate`는 활성화된 가상환경을 해제할 때 사용한다.
 <br><br><br>
 
 ## 5. pip로 장고 설치
-`pip`은 'Python Installs Python', 'Python Install Program' 등의 약자로, 파이썬 패키지를 다운 받을 수 있는 프로그램이다.,<br><br>
+`pip`은 'Python Installs Python', 'Python Install Program' 등의 약자로, 파이썬 패키지를 다운 받을 수 있는 프로그램이다.<br><br>
 
 먼저 `pip list`라고 입력해보자. 기본적으로 장고가 설치되어 있지 않을 것이다.<br><br>
 
@@ -139,7 +140,7 @@ pyenv를 통해 버젼의 구속에서 벗어날 수 있었다. 그러나 여기
 ## 6. 장고 프로젝트 생성
 이전까지가 프로젝트를 위한 세팅이었다면 지금부터는 장고 자체의 세팅이다.<br>
 장고가 설치된 가상환경 위 그리고 프로젝트가 생성되길 원하는 경로에서 다음과 같이 입력한다.<br>
-`django-admin startproject _프로젝트명_`<br>
+`django-admin startproject 프로젝트명`<br>
 
 이후 app을 만드는 등의 기술적인 부분은 과제의 범위를 넘어서 설명하지 않는다.
 
@@ -148,7 +149,7 @@ pyenv를 통해 버젼의 구속에서 벗어날 수 있었다. 그러나 여기
 ## 7. 파이참으로 프로젝트폴더 열기
 WPS에서는 파이참(PyCharm)으로 장고를 관리한다. 파이참에서 우리의 프로젝트를 오픈하자.<br>
 
-`File > Open > _원하는 프로젝트_`
+`File > Open > 원하는 프로젝트`
 <br><br><br>
 
 
@@ -157,7 +158,7 @@ WPS에서는 파이참(PyCharm)으로 장고를 관리한다. 파이참에서 �
 우리는 프로젝트가 아까 만든 가상환경 위에서 동작하기를 바란다. 근데 별도로 지정해주지 않으면 파이참은 기본 설치된 파이썬 버전으로 코드를 실행할 것이다.<br>
 그래서 프로젝트에 맞는 가상환경 인터프리터를 세팅하자.<br>
 
-`File > Settings > Project: *프로젝트명* > Project Interpreter`<br>
+`File > Settings > Project: 프로젝트명 > Project Interpreter`<br>
 에서 우리가 원하는 가상환경을 선택하고 `OK`를 누른다.<br><br>
 
 
