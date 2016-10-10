@@ -130,9 +130,9 @@ class Car(models.Model):
 ```
 
 이렇게 테이블을 구성할 수 있을 것이다. 이때 핵심적인 문장은 다음과 같다.
-`manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)`
+`manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)`<Br>
 1. `Car`테이블은 생산자를 첫 인자로 받는 ForeignKey를 가진다.<br>
-필드의 이름은 관습적으로 관계 맺는 테이블의 lowercase로 하는 경우가 많다.
+필드의 이름은 관습적으로 관계 맺는 테이블의 lowercase로 하는 경우가 많다.<br>
 2. 관계는 'many to one'이다. 여기서 'one'의 `Car`에 ForeignKey를 넣는다.<br> `on_delete=models.CASCADE`는 관계 맺고 있는 테이블 예를 들어, 생산자 현대자동차가 망한다면 그와 관계 맺고 있던 `Car` 레코드들까지 같이 지워진다는 의미를 갖고 있다.
 
 ```python
@@ -147,8 +147,8 @@ class Car(models.Model):
     def __str__(self):
         return "Car : {}".format(self.title)
 ```
-생산자와 자동차의 테이블을 만들었다. 두 테이블은 many to one의 관게에 있어 자동차에 ForeignKey 필드를 넣었다. 
-`def __str_` 넣어줌으로써 구분이 어려운 object로 출력되지 않도록 했다.
+생산자와 자동차의 테이블을 만들었다. 두 테이블은 many to one의 관계에 있어 자동차에 ForeignKey 필드를 넣었다. 
+`def __str__` 넣어줌으로써 구분이 어려운 object로 출력되지 않도록 했다.
 
 
 ```python
@@ -188,7 +188,7 @@ c2.manufacturer
 
 #### 1.2.2.1 기본적인 경우
 many-to-many 관계를 정의하기 위해서는 `ManyToManyField`를 사용한다. 다른 필드 타입처럼 사용할 수 있는데 첫 위치인자로 관계 맺은 모델을 받아야 한다.<br>
-예를 들어보자. 피자와 피자에 들어가는 토핑! 피자는 여러 토핑이 올라가고(many), 하나의 토핑은 여러 피자에 들어간다.(many) 구현해보자.
+예를 들어보자. 피자와 피자에 들어가는 토핑! 피자에는 여러 토핑이 올라가고(many), 하나의 토핑은 여러 피자에 들어간다.(many) 구현해보자.
 
 ```python
 from django.db import models
@@ -246,7 +246,7 @@ ID | Pizza ID | Topping ID
 5 | 3 | 2
 6 | 3 | 3
 
-이 테이블과 연결되면 가령 '피자 아이디 3이 갖는 모든 토핑을 구하라'와 같은 쿼리가 들어오면 이 테이블에서 필터링을 하면 구할 수 있을 것이다.<br>
+이 테이블과 연결되면 가령 '피자 ID3을 갖는 모든 토핑을 구하라'와 같은 쿼리가 들어오면 이 테이블에서 필터링을 하면 구할 수 있을 것이다.<br>
 
 #### 1.2.2.2. intermediate model을 사용한 경우
 간단한 many to many 관계를 다룬다면 위의 경우만으로 충분할 것이다. 
@@ -282,7 +282,7 @@ class Membership(models.Model):
 ```
 `members = models.ManyToManyField(Person, through='Membership')`가 중요하다.
 일반적인 다 대 다 관계와 비슷해 보이는데,`through='Membership'` 라는 인자가 들어 있다.<br>
-그리고 Membership이라는 모델느 `person`과 `group`이라는 ForeignKey를 갖는다.<br>
+그리고 Membership이라는 모델은 `person`과 `group`이라는 ForeignKey를 갖는다.<br>
 아까 차와 생산자에서 'one' 관계인 차에 'ForeignKey'가 들어간 것 기억하는가? Membership에 키가 들어간 것이 그래서이다. 
 멤버십 인스턴스는 하나의 그룹 또는 소속원을 갖는데 한 소속원은 Membership을 통해 많이 들어갈 수 있다.<br>
 
