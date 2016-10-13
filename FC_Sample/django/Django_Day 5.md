@@ -1,7 +1,7 @@
 # Built-in template tags and filters
 
 이 문서는 장고의 template `tag`(이하 태그)와  `filter`(이하 필터)에 대해 다룬다. 
-또한 커스텀  태그, 필터의 문서화도 다루기 때문에 당신이 [automatic documentation][admindocs]를 사용한다면 유용할 것이다.
+또한 커스텀  태그, 필터의 문서화도 다루기 때문에 당신이 [automatic documentation](https://docs.djangoproject.com/en/1.10/ref/contrib/admin/admindocs)를 사용한다면 유용할 것이다.
 
 <br>
 ## 1. _Built-in `tag` reference_
@@ -108,8 +108,8 @@ Cross Site Request Forgery의 약자로 인터넷 공격의 한 종류라고 한
 
 
 ### 1.6. extends
-해당 템플릿이 부모 템플릿을 확장한다는 것을 표현한다. 사용방법은 두 가지이다.
-1. `{% extends "base.html" %}`와 같이 " "를 사용해서 그 이름을 갖는 템플릿을 확장하는 방법이다.
+해당 템플릿이 부모 템플릿을 확장한다는 것을 표현한다. 사용방법은 두 가지이다.<br>
+1. `{% extends "base.html" %}`와 같이 " "를 사용해서 그 이름을 갖는 템플릿을 확장하는 방법이다.<br>
 2. `{% extends variable %}`는
   * 변수가 문자열이라면 장고가 그 문자열을 템플릿의 이름으로 사용하며,
   * 변수가 템플릿이라면, 장고는 그 객체를 부모 템플릿으로 사용할 것이다.
@@ -251,7 +251,7 @@ forloop.parentloop | 루프가 중첩된 경우, 현재를 감싸는 부모 루�
 ```django
 It is {% now "jS F Y H:i" %}
 ```
-저 문자들을 의미 없는 문자로 쓰고 싶으면(escape하려면) `\`, 백슬래쉬를 사용한다. 
+format과 상관없는 문자들을 raw 문자로 쓰고 싶으면(escape하려면) `\`, 백슬래쉬를 사용한다. 
 <br>
 
 ```django
@@ -260,7 +260,7 @@ It is the {% now "jS \o\f F" %}
 결과는  “It is the 4th of September”일 것이다. 'o', 'f' 같은 순수 문자열이 백슬래쉬로 이스케이프되었다.<br><BR>
 
 전해지는 포맷은 미리 정해진 값을 넣어줄 수도 있는데 그 값들은 _DATE_FORMAT, DATETIME_FORMAT, SHORT_DATE_FORMAT, SHORT_DATETIME_FORMAT_가 있다.<br>
-그리고 이 포맷들은 현지화 정도나, 지역설정에 따라 상이할 수있 다.
+그리고 이 포맷들은 현지화 정도나, 지역설정에 따라 상이할 수 있다.
 ```django
 It is {% now "SHORT_DATETIME_FORMAT" %}
 ```
@@ -274,7 +274,7 @@ It is {% now "SHORT_DATETIME_FORMAT" %}
 
 
 ### 1.14. spaceless
-HTML 태그 사이의 whitespace를 제거한다. 탭과 new linㄷ을 포함한다.
+HTML 태그 사이의 whitespace를 제거한다. 탭과 new line을 포함한다.
 
 ```django
 {% spaceless %}
@@ -308,7 +308,7 @@ HTML 태그 사이의 whitespace를 제거한다. 탭과 new linㄷ을 포함한
 
 
 
-
+<br><br>
 ## 2. Built-in filter reference¶
 
 ### 2.1. add
@@ -373,6 +373,7 @@ value가 ""이면(빈 문자열이면), 결과는 'nothing'일 것이다.
     {'name': 'amy', 'age': 22},
     {'name': 'joe', 'age': 31},
 ]
+```
 결과는 다음과 같을 것 이다.
 ```django
 [
@@ -493,4 +494,4 @@ You have {{ num_cherries }} cherr{{ num_cherries|pluralize:"y,ies" }}.
 
 
 
-[admindocs]:https://docs.djangoproject.com/en/1.10/ref/contrib/admin/admindocs
+
