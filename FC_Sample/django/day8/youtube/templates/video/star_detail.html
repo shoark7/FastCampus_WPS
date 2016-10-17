@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>detail post</title>
+</head>
+<body>
+    <div class="">
+        <a href="{% url 'video:search' %}">
+            <button>처음으로</button>
+        </a><a href="{% url 'video:star_list' %} ">
+            <button>리스트 다시 보기</button>
+        </a>
+    </div>
+    <h2 style="text-align:center">{{ video.title }}</h2>
+
+    <div class="container">
+        <div class="left-side" style="display:inline-block;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.video_id }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="right-side" style="display:inline-block; height:100%; overflow:hidden;">
+            <div class="" style="vertical-align:center">동영상 고유 식별번호 : {{video.video_id}}</div>
+            <div class="" >업로드 날짜 : {{video.published_date}}</div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
