@@ -1,0 +1,41 @@
+{% extends 'common/base.html' %}
+
+
+{% block content %}
+<h3>Signup</h3>
+<div class="signup">
+  <form action="" method="POST">{% csrf_token %}
+    <div class="form-group">
+      <label for="input-email">Email</label>
+      <input type="text" id="input-email" name="email" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="input-password1">Password</label>
+      <input type="password" id="input-password1" name="password1" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="input-password2">Password confirmation</label>
+      <input type="password" id="input-password2" name="password2" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="input-last_name">last_name</label>
+      <input type="text" id="input-last_name" name="last_name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="input-first_name">first_name</label>
+      <input type="text" id="input-first_name" name="first_name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="input-nickname">nickname</label>
+      <input type="text" id="input-nickname" name="nickname" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Signup</button>
+  </form>
+</div>
+{% endblock %}

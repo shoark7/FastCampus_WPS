@@ -1,0 +1,27 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+{% if error_message %}
+<div>
+  <h4>{{ error_message }}</h4>
+</div>
+{% endif %}
+<div class="col-sm-6 col-sm-offset-3">
+<h3 class="text-center">Login</h3>
+<p class="text-center">아이디와 비밀번호로 로그인해주세요</p>
+<form action="" method="POST">{% csrf_token %}
+  <div class="form-group">
+    <label for="input-username">아이디</label>
+    <input id="input-username" type="text" name="username" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="input-password">비밀번호</label>
+    <input id="input-password" type="password" name="password" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-primary">로그인</button>
+</form>
+</div>
+{% endblock %}
