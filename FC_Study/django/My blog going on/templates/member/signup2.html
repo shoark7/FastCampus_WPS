@@ -1,0 +1,15 @@
+{% extends 'common/base.html' %}
+
+
+{% block content %}
+<form action="" method="POST">{% csrf_token %}
+  {% for field in form %}
+  <div class="form-group {% if field.errors %}has-error{% endif %}">
+    {{ field.label_tag }}
+    {{ field }}
+    <div>{{ field.errors }}</div>
+  </div>
+  {% endfor %}
+  <button type="submit">Signup</button>
+</form>
+{% endblock %}
