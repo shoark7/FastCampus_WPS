@@ -66,7 +66,7 @@
 <br><br>
 
 ### :white_check_mark: Contents of this repository
-> #### :open_file_folder: [FC_Sample](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Sample)
+> #### :open_file_folder: [FC_Study](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Study)
 > I will summarize and abridge everyday's stuff I will have learned in this folder. And if possible stuff there will be linked from README.md, this page, at the Curriculum section.
 
 > #### :open_file_folder: [FC_Homework](https://github.com/shoark7/FastCampus_WPS/tree/master/FC_Homework)
