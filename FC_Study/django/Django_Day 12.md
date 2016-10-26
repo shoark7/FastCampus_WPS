@@ -1,4 +1,4 @@
-# DJango day 9.
+# DJango day 12.
 
 ####2016/10/24 월요일.
 #### 박성환
@@ -31,7 +31,6 @@
 ```css
 EMAIL_HOST : 이메일 서버 (ex 'smtp.gmail.com')
 EMAIL_PORT : 이메일 서버와 소통할 수 있는 포트.(gmail의 경우 537)
-	자세한 설명은 NMSP의 종류라고 하는데 더 알아보도록 하자.
 EMAIL_HOST_USER  : 아이디
 EMAIL_HOST_PASSWORD : 비밀번호
 EMAIL_USE_TLS : TLS 사용 여부
@@ -62,12 +61,15 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 이 기본 세팅을 통해서 메일을 보낼 때는 다음 함수를 사용한다.
 
 ```python
+from django.core.mail import send_mail
+
 send_mail(
 	subject,				# 메일의 제목
 	message,				# 메일 메시지
 	from_email,				# 발신인
 	recipient_list,			# 수신인 리스트
 	fail_silently=False,	# 발신 실패시 에러 처리 여부
+	)
 ```
 실제로 함수를 만들면 다음과 같다.
 
@@ -75,7 +77,7 @@ send_mail(
 def send_mail(subject, message, recipient_list=None):
 	from django.conf import settings
 	default_recipient_list = ['shoark7@gmail.com']
-	django_send_mail(
+	send_mail(
 		subject=subject,
 		message=message,
 		from_email=settings.EMAIL_HOST_USER, #!
@@ -136,7 +138,9 @@ def send_sms(number, message):
         print("Error Message : %s" % e.msg)
 ```
 해당 SDK는 `pip`를 통해 설치가 가능했다. 위 코드는 sdk안에 제공된 코드를 내 입맛에 맞게 **아주 조금** 수정했다.<br><br>
-예를 들어, 문자 보낼 번호가 리스트나 튜플의 형태로 여러 개 왔을 때 하나의 문자열로 이어서 함수에 넣어줘야 문자가 보내진다고 설명에 쓰여 있다.(ex. Recipients Number '01000000000,01000000001')
+예를 들어 한 사람이 아닌 다수에게 보내고 싶을 때가 있다고 하자. SDK는 그 경우 이렇게 하라고만 소개하고 있지 구현해놓진 않았다.
+그래서 다수에게 메일 보내기를 직접 구현하였다.<br>
+문자 보낼 번호가 리스트나 튜플의 형태로 여러 개 왔을 때 하나의 문자열로 이어서 함수에 넣어줘야 문자가 보내진다고 설명에 쓰여 있다.(ex. Recipients Number '01000000000,01000000001')
 
 
 <bR><BR><BR>
@@ -169,12 +173,12 @@ from blog.models import Comment
 def send_comment_mail(sender=Comment, instance, **kwargs):
 	title = '{} 글에 댓글이 달렸습니다.'.format(instance.post.title)
 	content = '{}에 {} 내용이 달렸네요.'.format(
-        instance.created_date.strftime('%Y.%m.%d %H:%M'),
-        instance.content,
-    )
-    	send_mail(title, content)
+        	instance.created_date.strftime('%Y.%m.%d %H:%M'),
+        	instance.content,
+    	)
+    send_mail(title, content)
 
-post_save.connect(send_comment)
+post_save.connect(send_comment_mail)
 ```
 그리고 Blog.apps.py에 다음을 입력해줘야 한다.
 ```python
