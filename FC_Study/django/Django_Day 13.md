@@ -5,7 +5,7 @@
 # 1. private configuration file 관리하기
 우리는 [my-blog 프로젝트](https://github.com/shoark7/WPS_mysite_project)를 진행하면서 그 프로젝트를 깃허브에서 관리하고 있다. 깃허브는 기본적으로 모두에게 공유되는 시스템이다. 그리고 그것을 우리도 바라고 있다.<br><BR>
 
-그러나 **모두 공개되면 안 되는 파일**이 있지 않을까? 예를 들어 우리 앱의 `mail` api에서는 구글 g메일 계정과 비밀번호를 통해서 메일을 보내는 기능이 있고, 그래서 아이디와 비밀번호가 고스란히 노출되고 있다. 이럴 때 어떻게 해야 할까?<br><BR>
+그러나 **모두에게 공개되면 안 되는 파일**이 있지 않을까? 예를 들어 우리 앱의 `mail` api에서는 구글 gmail 계정과 비밀번호를 통해서 메일을 보내는 기능이 있고, 그래서 아이디와 비밀번호가 깃허브에 고스란히 노출되고 있다. 이럴 때 어떻게 해야 할까?<br><BR>
 
 정답은 비밀번호와 같은 **민감한 정보만 담는 파일을 따로 두고, 그 파일을 `.gitignore`에서 관리하는 것**이다. 그렇게 하면 그 파일 자체가 깃허브로 올라가지가 않아서 우리는 안전하게 정보를 관리할 수 있고, 다른 유저들은 우리의 프로젝트를 관람할 수 있다.<br><BR>
 
@@ -50,12 +50,12 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 그리고 `.gitignore` 파일 안에 우리의 `settings_debug.json`을 추적하지 않도록 넣어줘야 한다.
 ```shell
-echo '*/conf/' >> .gitignore
+echo '*/.conf/' >> .gitignore
 ```
-먼저 우리의 `settings_debug.json`은 `conf` 폴더 안에 있다. **폴더이기 때문에 끝에 '/'를 넣어줘야 한다.** <BR>
+먼저 우리의 `settings_debug.json`은 `.conf` 폴더 안에 있다. **폴더이기 때문에 끝에 '/'를 넣어줘야 한다.** <BR>
 '>>' 를 사용함으로써 기존의 `.gitignore`에 덧붙인다.(append) '>'를 하나만 쓰면 지우고 다시 쓰는 것(write)이 되니 조심한다.<br><BR>
 
-이렇게 하면 **`conf` 파일이 추적되지 않으니 그 안에 있는 `settings_debug.json` 또한 자연스럽게 추적을 피하게 된다.** 이제 이 데이터를 아까처럼 그대로 쓰는 것이 아닌, **참조해 사용함으로써 값을 숨길 수 있다.**
+이렇게 하면 **`.conf` 파일이 추적되지 않으니 그 안에 있는 `settings_debug.json` 또한 자연스럽게 추적을 피하게 된다.** 이제 이 데이터를 아까처럼 그대로 쓰는 것이 아닌, **참조해 사용함으로써 값을 숨길 수 있다.**
 ```python
 # 1.
 CONF_DIR = os.path.join(BASE_DIR, '.conf')
@@ -69,9 +69,9 @@ EMAIL_HOST_PASSWORD = config['email']['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = config['email']["EMAIL_USE_TLS"]
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 ```
-*  `conf` 폴더 안의 json값을 불러들여 `config` 안에 집어넣는다. 두 번째 식이 잘 이해가 안 갈 수 있다. 순서를 설명하면,
+*  `.conf` 폴더 안의 json값을 불러들여 `config` 안에 집어넣는다. 두 번째 식이 잘 이해가 안 갈 수 있다. 순서를 설명하면,
 	1. **`open(os.path.join(CONF_DIR, 'settings_debug.json').read()` open 함수로 파일을 읽는다.(read)** 이때 결과는 단순 문자열일 것이다.
-	2. **그 문자열을 `json.loads`함수로 파싱한다.** 그리고 그 값을 `config`라는 변수에 답는다. 완벽한 json 객체가 된다. `load`와 `dump`의 차이, `load`와 `loads`의 차이는 직접 확인해보기 바란다.
+	2. **그 문자열을 `json.loads`함수로 파싱한다.** 그리고 그 값을 `config`라는 변수에 담는다. 완벽한 json 객체가 된다. `load`와 `dump`의 차이, `load`와 `loads`의 차이는 직접 확인해보기 바란다.
 * 이메일을 보내기 위한 세팅 값들을 값을 참조해서 쓴다. 이때 실제 내용은 드러나지 않는다.<br><BR>
 
 #### 앞으로 위와 같은 방법을 사용해서 민감한 정보를 가린 채 안전하게 공유할 수 있을 듯 하다.
@@ -167,8 +167,8 @@ class Photo(models.Model):
 이 모델이 까다롭고 중요하다. 하나씩 살펴보자.<br><BR>
 
 * 하나의 앨범은 여러 사진을 가지고 있다. 그래서 `Photo` 클래스는 `Album`을 외래키로 갖는다.
-* 사진에서 소유자가 있으므로, 사용자 또한 외래키로 갖는다.
-* 사진 주소를 받는 `ImageField`를 설정한다. 이 필드는 `FileField`를 상속받으며 추가적으로 받은 파일이 이미지인지 검증한다. 그리고 이미지이기 때문에 width, height 속성 또한 갖는다. `upload_to`는 사진이 업로드될 공간이다. 조금 있다가 설명하겠지만 우리처럼 `photo`라고 지정하면 `MEDIA_ROOT/photo`에 사진이 저장된다. `MEDIA_ROOT`은 조금 있다가 다시 설명한다.
+* 사진에도 소유자가 있으므로, 사용자 또한 외래키로 갖는다.
+* 사진 주소를 받는 `ImageField`를 설정한다. 이 필드는 `FileField`를 상속받으며 추가적으로 받은 파일이 이미지인지 검증한다. 그리고 이미지이기 때문에 width, height 속성 또한 가질 수 있다. `upload_to`는 사진이 업로드될 공간이다. 조금 있다가 설명하겠지만 우리처럼 `photo`라고 지정하면 `MEDIA_ROOT/photo`에 사진이 저장된다. `MEDIA_ROOT`은 조금 있다가 다시 설명한다.
 * 하나의 사진은 여러 사람으로부터 '좋아요'를 받을 수 있고, 한 사람은 여러 사진을 '좋아요'할 수 있다. 그래서 `ManyToManyField`로 받는다. 그리고 `through` 속성을 통해 `PhotoLike` intermediate 모델을 통해 연결된다. 이때 중요한 것이 related_name.  생각해보자. 외래키든, 다중키든 서로 ORM을 통해 연결될 수 있다. `photo1.owner....`나 `owner.photo_set....`와 같이 말이다.
 이상한 걸 느낄 수 있는가? `Photo`는 여러 필드에서 `User`와 연결되어 있다. 
 이때, **`user1.photo_set`은 과연, `owner`, `like_users`, `dislike_user` 중 누구와 연결되는가?** 그 관계가 꼬여 있다.
@@ -205,7 +205,7 @@ class PhotoDislike(models.Model):
  
  ```python
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_ROOT은 유저가 업로드한 파일이 저장될 절대경로이다.
+# MEDIA_ROOT는 유저가 업로드한 파일이 저장될 절대경로이다.
 #  따로 지정하지 않으면 기본값은 ''(빈 문자열)이다.
 # 아까 ImageField에서 upload='photo'라는 속성을 넣어줬다.
 # 이 속성의 뜻은 "MEDIA_ROOT + 'photo'", 즉 프로젝트 내 photo 폴더 내에 사진을 저장한다는 뜻이 된다.
@@ -215,7 +215,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 # MEDIA_ROOT와 헷갈리면 안 된다.
 # 우리가 MEDIA_ROOT을 통해 사진을 정상적으로 저장했다고 하자. '기본 경로/media/photo'에 사진이 저장되었을 것이다.
-# 그런데 admin 사이트로 가서 사의 경로를 확인하면 절대경로가 아닌 'photo'를 포함하는 파일의 상대경로만 지정되어 있다. 
+# 그런데 admin 사이트로 가서 사진의 경로를 확인하면 절대경로가 아닌 'photo'를 포함하는 파일의 상대경로만 지정되어 있다. 
 # 그래서 정상적으로 사진 파일을 열어볼 수 없다. 이때 MEDIA_URL을 지정해줘야 한다.
 # MEDIA_URL = '/media/'와 같이 입력해줌으로써 url이 향하는 절대경로는 이곳임을 명시해준다. 
 # 앞에 '/'가 온 것은 최상단 경로의 media라는 뜻이고, 끝에 '/'가 온 것은 media가 디렉토리라는 것을 말해준다.
