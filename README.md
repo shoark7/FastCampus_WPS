@@ -45,15 +45,15 @@
 <br>
 > :books: **Curriculum**
 > * Basic Python
->   - [PythonBasic_Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day1.md)
->   - [PythonBasic_Day2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day2.md)
->   - [PythonBasic_Day3](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/Python%20Basics/PythonBasic_Day3.md)
+>   - [PythonBasic_Day1 : Basic](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/Python%20Basics/PythonBasic_Day1%20Basic-1.md)
+>   - [PythonBasic_Day2: Packing and list comprehension](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/Python%20Basics/PythonBasic_Day2%20Packing%20and%20list%20comprehension.md)
+>   - [PythonBasic_Day3: Decorator and OOP](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/Python%20Basics/PythonBasic_Day3%20Decorator%20and%20OOP.md)
 
 > * Basic HTML, CSS
->   - [HTML_CSS Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day1.md)
->   - [HTML_CSS Day2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day2.md)
->   - [HTML_CSS Day3](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day3.md)
->   - [HTML_CSS Day4](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day4.md)
+>   - [HTML_CSS Day1: Basic](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/HTML%2BCSS/HTML%20%2B%20CSS_Day1%20Html%20basic-1.md)
+>   - [HTML_CSS Day2: CSS](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/HTML%2BCSS/HTML%20%2B%20CSS_Day2%20CSS.md)
+>   - [HTML_CSS Day3: Form and SASS](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/HTML%2BCSS/HTML%20%2B%20CSS_Day3%20Form%20and%20SASS.md)
+>   - [HTML_CSS Day4: Bootstrap example](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/HTML%2BCSS/HTML%20%2B%20CSS_Day4%20Bootstrap%20example.md)
 
 > * Django and back-end
 >   - [Django Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%201.md)
