@@ -56,6 +56,15 @@
 >   - [HTML_CSS Day4](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Sample/HTML%2BCSS/HTML%20%2B%20CSS_Day4.md)
 
 > * Django and back-end
+>   - [Django Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%201.md)
+>   - [Django Day2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%202.md)
+>   - [Django Day3](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%203.md)
+>   - [Django Day4](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%204.md)
+>   - [Django Day5](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%205.md)
+>   - [Django Day7](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%207.md)
+>   - [Django Day9](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%209.md)
+>   - [Django Day12](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%2012.md)
+>   - [Django Day13](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%2013.md)
 
 > * Javascript and JQuery
 
