@@ -56,15 +56,15 @@
 >   - [HTML_CSS Day4: Bootstrap example](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/HTML%2BCSS/HTML%20%2B%20CSS_Day4%20Bootstrap%20example.md)
 
 > * Django and back-end
->   - [Django Day1](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%201.md)
->   - [Django Day2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%202.md)
->   - [Django Day3](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%203.md)
->   - [Django Day4](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%204.md)
->   - [Django Day5](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%205.md)
->   - [Django Day7](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%207.md)
->   - [Django Day9](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%209.md)
->   - [Django Day12](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%2012.md)
->   - [Django Day13](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%2013.md)
+>   - [Django Day1: Setting and tutorial 1-2](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%201%20Setting%20and%20tutorial%201-2.md)
+>   - [Django Day2: Tutorial 3-4](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%202%20Tutorial%203-4.md)
+>   - [Django Day3: Model](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%203%20Model.md)
+>   - [Django Day4: Model and field](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%204%20Model%20and%20field.md)
+>   - [Django Day5: Tag and filter](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%205%20Tag%20and%20filter.md)
+>   - [Django Day7: Youtube model,view](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%207%20Youtube%20video%20model%20and%20view.md)
+>   - [Django Day9: Humanize and others](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%209%20Humanize%20and%20others.md)
+>   - [Django Day12: Mail and sms](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%2012%20Mail%20and%20sms.md)
+>   - [Django Day13: Private configuration](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/django/Django_Day%2013%20Private%20configuration.md)
 
 > * Javascript and JQuery
 
