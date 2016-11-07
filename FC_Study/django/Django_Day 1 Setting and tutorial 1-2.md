@@ -43,8 +43,8 @@ mysite/
 
 와 같이 포트를 지정하거나, IP 주소도 지정할 수 있다.
 
-> ** runserver의 자동 리로딩 **
-> 장고 서버는 코드가 업데이트 될때마다 자동으로 다시 시작한다. 그러나 파일을 더하는 등 어떤 행동들은 재시작이 되지 않기 때문에 직접 시작해주어야 한다.<br>
+> **runserver의 자동 리로딩**<br>
+> 장고 서버는 코드가 업데이트 될 때마다 자동으로 다시 시작한다. 그러나 파일을 더하는 등 어떤 행동들은 재시작이 되지 않기 때문에 직접 시작해주어야 한다.<br>
 
 
 ## 1.3. APP 만들기
@@ -69,7 +69,7 @@ polls/
 
 
 ## 1.4. 첫 view 쓰기
- poles라는 APP에는 그 APP에 해당하는 view가 있고 그 안에 코드를 적는다. 그리고 그 뷰가 실행되기 위해서는 그것을 url과 매핑해야 하며 그래서 APP에 urls.py를 만든다.
+ polls라는 APP에는 그 APP에 해당하는 view가 있고 그 안에 코드를 적는다. 그리고 그 뷰가 실행되기 위해서는 그것을 url과 매핑해야 하며 그래서 APP에 urls.py를 만든다.
  
  수업 시간에 배운 것과 달리 APP에 url 정보를 담으면 프로젝트에 있는 루트 url에 정보를 담아줘야 한다. 이때 django.conf.url의 include 메소드를 사용한다.
 
@@ -145,29 +145,29 @@ INSTALLED_APPS = [
 다음과 같이 입력해서 우리가 입력한 클래스가 어떻게 SQL로 해석되는지 확인해볼 수도 있다. 이것이 곧 ORM!!
 
 > 즉 모델에 변화를 주는 세 가지 방향은
-> 1. models.py를 수정한다.
-> 2. `python manage.py makemigrations` 로 그 변화들에 대한 마이그레이션을 만든다.
-> 3. `python manage.py migrate`로 변화를 적용한다.
+>  - 1. models.py를 수정한다.
+>  - 2. `python manage.py makemigrations` 로 그 변화들에 대한 마이그레이션을 만든다.
+>  - 3. `python manage.py migrate`로 변화를 적용한다.
 
 
 
-## 2 .4. API가지고 놀기
+## 2.4. API가지고 놀기
  free API Django를 가지고 놀아보자. 다음을 입력.
  
  > python manage.py shell
  
- 일반과 같은 파이썬 쉘이 나타난다. 일반 쉘과 달리 manage.py가 ' DJANGO_SETTINGS_MODULE' 환경변수를 집어넣고 그 변수는 장고에게 settings.py 파일을 임포트할 수 있는 경로를 주게 된다.
+ 일반적인 파이썬 쉘이 나타난다. 하지만 일반 쉘과 달리 `manage.py`가 `DJANGO_SETTINGS_MODULE` 환경변수를 집어넣고 그 변수는 장고에게 `settings.py` 파일을 임포트할 수 있는 경로를 주게 된다.
  그리고 다음과 같이 입력한다.
  
- > from polls.models import Question, Choice 
+ > from polls.models import Question, Choice<br>
  > Question.objects.all()
  
- 위 문장을 통해 모델에 있는 Question, Choice 모델에 접근했고 아래 문장을 통해 Question의 모든 자료를 뽑아올 수 있다.
+ 위 문장을 통해 모델에 있는 `Question`, `Choice` 모델에 접근했고 아래 문장을 통해 `Question`의 모든 자료를 뽑아올 수 있다.
  
- > q = Question(question_text="What's new?", pub_date=timezone.now())
+ > q = Question(question_text="What's new?", pub_date=timezone.now())<br>
  > q.save()
 
-위처럼 Question 객체 즉, 데이터 리코드 하나를 만들 수 있고, save를 명시적으로 적어주면 데이터베이스에 등록된다. 데이터 수정 등에도 마찬가지이다.
+위처럼 `Question` 객체 즉, 데이터 리코드 하나를 만들 수 있고, `save`를 명시적으로 적어주면 데이터베이스에 등록된다. 데이터 수정 등에도 마찬가지이다.
  
  
 ## 2.5. Introducing the Django Admin¶
@@ -193,7 +193,7 @@ admin 사이트를 만드는 것은 꽤나 지루한 일이다. 따라서 장고
 # Part 3. [View]( https://docs.djangoproject.com/en/1.10/intro/tutorial03/)
 
 ## 3.1. 개요
-'view'란 장고 어플리케이션에 있는 웹페지의 한 타입으로서 특정 기능을 수정하고 본인의 템플릿이 있는 것을 말한다. <br>
+`view`란 장고 어플리케이션에 있는 웹페이지의 한 타입으로서 특정 기능을 수정하고, 필요한 경우 템필릿을 보내는 역할을 한다.<br>
 만약 블로그라면, 블로그 홈페이지, 커맨트, 인덱스 페이지, 결과 페이지 등의 뷰가 있어야 할 것이다.<br>
 장고에서는 웹페이지는 뷰를 통해 전달이 되고, 각각의 뷰는 간단한 파이썬 함수나 CBV의 인스턴스로 표현된다. 장고는 URL을 검사한 뒤, 뷰를 선택할 것이다. 
 <br>
@@ -203,7 +203,7 @@ URL이 뷰로 가기 위해서는 장고는 ‘URLconfs’라는 것을 사용�
 이번 예제는 URLconfs에 대한 기본 소개이다.
 
 ## 3.2. 뷰 더 작성하기
-튜토리얼과 같이 뷰를 더 작성한다. 잊지 말자 언제나 뷰는 url과 연결되어 있고 따라서 뷰를 작성하면 url과 이어줘야 한다. 정규표현식으로 어떻게 url이 매칭되는지 다음과 같이 보자.
+튜토리얼과 같이 뷰를 더 작성한다. 잊지 말자. 언제나 뷰는 `url`과 연결되어 있고 따라서 뷰를 작성하면 url과 이어줘야 한다. 정규표현식으로 어떻게 url이 매칭되는지 다음과 같이 보자.
 ```python
 
 urlpatterns = [

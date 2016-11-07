@@ -120,7 +120,7 @@ detail.html을 링크 거는 우리의 이 코드는 문제가 있다. 수많은
 
 1. `form`에 대해 먼저 살펴보자. 'action'을 통해 우리는 vote 뷰를 실행하게 될 것이다. 그리고 보내는 방법은 'post'이다
 2. `{% csrf_token %}`는 'post'로 `form`을 입력할 때 꼭 넣어줘야 한다고 한다. 'Cross Site Request Forgery'의 약자로 특정 인터넷 공격이라고 한다. 
-3. `intput`은 라디오버튼이고, 'value' 값으로 `choice.id`가 들어갈 것이다. 서브밋이 되면 'choice:choice.id' 쌍으로 값이 전달될 것이다.
+3. `input`은 라디오버튼이고, 'value' 값으로 `choice.id`가 들어갈 것이다. 서브밋이 되면 'choice:choice.id' 쌍으로 값이 전달될 것이다.
 4. `choice{{ forloop.counter }}`은 템플릿 언어에서 지정하는 것으로 `for`문이 돌 때마다 1, 2, 3, 4식으로 늘어난다.
 
 
@@ -142,7 +142,7 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 ```
 
-다음으로 `vote` 뷰이다. 'detail.html' 뷰에서는 선택지 중 하나를 선택하고, 'submit'으로 보냈다. `votet`는 그것에 대한 처리를 한다.<br>
+다음으로 `vote` 뷰이다. 'detail.html' 뷰에서는 선택지 중 하나를 선택하고, 'submit'으로 보냈다. `vote`는 그것에 대한 처리를 한다.<br>
 먼저 'selected_choice'라는 변수에 request의 'choice' 키에 해당하는 값을 가져온다. 여기서는 choice의 아이디가 된다. <br>
 그런데 만약 submit은 했는데 체크를 안 하고 보냈다면, 에러를 일으켜 'error_message'를 보낸다.<br>
 정상적으로 하나를 선택해 보냈다면, 그것의 'votes' 값을 1 증가시키고 저장한다. 그리고 결과를 보여줄 `reults` 뷰에 보낸다.
