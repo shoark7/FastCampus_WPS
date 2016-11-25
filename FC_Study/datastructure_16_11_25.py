@@ -1,4 +1,7 @@
 class Node:
+    """
+    Node for queue and stack. It has its data and index to next or previous node.
+    """
     def __init__(self, data=None):
         self.next = None
         self.data = data
@@ -8,6 +11,9 @@ class Node:
 
 
 class MyStack:
+    """
+    My stack implementation with Python.
+    """
 
     def __init__(self, name=None):
         self.name = name
@@ -21,7 +27,7 @@ class MyStack:
 
     def pop(self):
         if self.is_empty():
-            raise IndexError('OUT OF INDEX')
+            raise IndexError('자료가 더 이상 없습니다.')
         else:
             result = self.head.data
             self.head = self.head.next
@@ -41,6 +47,9 @@ class MyStack:
 
 
 class MyQueue:
+    """
+    My queue implementation with Python.
+    """
 
     def __init__(self, name=None):
         self.name = name
