@@ -43,6 +43,7 @@ def quick_sort(wanted_list):
     #
     #     wanted_list[START], wanted_list[MIDDLE] = wanted_list[MIDDLE], wanted_list[START]
 
+
     def make_partitions(start, end):
         pivot = wanted_list[start]
         low = start + 1
@@ -75,3 +76,4 @@ def quick_sort(wanted_list):
     # get_pivot()
     sort(START, END)
     return wanted_list
+
