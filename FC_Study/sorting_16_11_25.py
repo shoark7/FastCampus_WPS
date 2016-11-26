@@ -22,8 +22,6 @@ def bubble_sort(wanted_list):
     # Big O of bubble sort: n ** 2
 
 
-
-
 def quick_sort(wanted_list):
     """
     Quick sort implementation with Python.
@@ -33,6 +31,17 @@ def quick_sort(wanted_list):
     START = 0
     END = len(wanted_list)-1
 
+
+    # def get_pivot():
+    #     MIDDLE = len(wanted_list) // 2
+    #     value_list = [wanted_list[START], wanted_list[MIDDLE], wanted_list[END]]
+    #
+    #     for i in range(3 - 1):
+    #         for j in range(2 - i):
+    #             if value_list[j] > value_list[j+1]:
+    #                 value_list[j], value_list[j+1] = value_list[j+1], value_list[j]
+    #
+    #     wanted_list[START], wanted_list[MIDDLE] = wanted_list[MIDDLE], wanted_list[START]
 
     def make_partitions(start, end):
         pivot = wanted_list[start]
@@ -62,5 +71,7 @@ def quick_sort(wanted_list):
         sort(start, middle - 1)
         sort(middle + 1, end)
 
+
+    # get_pivot()
     sort(START, END)
     return wanted_list
