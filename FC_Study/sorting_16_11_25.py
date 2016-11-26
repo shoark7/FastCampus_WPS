@@ -23,47 +23,44 @@ def bubble_sort(wanted_list):
 
 
 
-# def quick_sort(wanted_list, middle=None):
-#     start = 0
-#     if middle:
-#         end = middle
-#     else:
-#         end = len(wanted_list)
-#
-#     """
-#
-#     :param wanted_list:
-#     :return:
-#     """
-#
-#
-#     def make_partitions(start, end):
-#         pivot = wanted_list[start]
-#         low = start + 1
-#         high = end
-#
-#         while low <= high:
-#             while wanted_list[low] <= pivot and low <= end:
-#                 low += 1
-#
-#             while wanted_list[high] >= pivot and high >= start+1:
-#                 high -= 1
-#
-#             if low <= high:
-#                 wanted_list[low], wanted_list[high] = wanted_list[low], wanted_list[high]
-#
-#
-#         wanted_list[start], wanted_list[high] = wanted_list[high], wanted_list[start]
-#
-#         return high
-#
-#
-#     # 1. 탈출 조건
-#     if start >= end:
-#         return
-#
-#     quick_sort(start, middle - 1)
-#     quick_sort(middle, end)
-#
-#
-#     # 2. 재귀식
+
+def quick_sort(wanted_list):
+    """
+    Quick sort implementation with Python.
+    :param wanted_list: The list you want to sort.
+    :return: sorted list. If you want, you can change it to return nothing.
+    """
+    START = 0
+    END = len(wanted_list)-1
+
+
+    def make_partitions(start, end):
+        pivot = wanted_list[start]
+        low = start + 1
+        high = end
+
+        while low <= high:
+            while low < end and wanted_list[low] <= pivot:
+                low += 1
+
+            while high > start and wanted_list[high] >= pivot:
+                high -= 1
+
+            if low > high:
+                break
+            wanted_list[high], wanted_list[low] = wanted_list[low], wanted_list[high]
+
+        wanted_list[high], wanted_list[start] = wanted_list[start], wanted_list[high]
+
+        return high
+
+    def sort(start, end):
+        if start >= end:
+            return
+
+        middle = make_partitions(start, end)
+        sort(start, middle - 1)
+        sort(middle + 1, end)
+
+    sort(START, END)
+    return wanted_list
