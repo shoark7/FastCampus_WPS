@@ -22,6 +22,15 @@ class HouseholdLedger(object):
       self.select_by_item: "Search results by item",
       self.get_top: "Show top 10 most expensive products",
     }
+    """
+    I like this part very much.
+    He put his functions into a single dict so he can
+    index it easily.
+    It's a good template
+    """
+
+
+
     self.count = len(self.options.keys())
     #! len method for dict also operates on pure dict, not only on keys.
     #! it would be better --> len(self.options)
