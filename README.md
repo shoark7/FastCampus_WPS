@@ -43,6 +43,7 @@
 > - 18:00 ~ 22:00 : Study and review time.
 
 <br>
+
 > :books: **Curriculum**
 > * Basic Python
 >   - [PythonBasic_Day1 : Basic](https://github.com/shoark7/FastCampus_WPS/blob/master/FC_Study/Python%20Basics/PythonBasic_Day1%20Basic-1.md)
